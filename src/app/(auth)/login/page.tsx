@@ -2,10 +2,10 @@ import SubmitButton from '@/components/SubmitButton'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { signIn } from '@/lib/auth'
+import { auth, signIn } from '@/lib/auth'
 import React from 'react'
 
-const LoginPage = () => {
+const LoginPage = async () => {
     return (
         <Card className='max-w-sm min-w-xs lg:min-w-sm'>
             <CardHeader>
