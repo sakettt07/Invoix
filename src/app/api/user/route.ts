@@ -1,4 +1,5 @@
 import { auth } from "@/lib/auth";
+import { connectDB } from "@/lib/connectDB";
 import UserModel from "@/models/user.model";
 import { NextResponse, NextRequest } from "next/server";
 
@@ -13,6 +14,7 @@ export async function PUT(request: NextRequest) {
                 status: 401
             })
         }
+        await connectDB();
         const userDetails = await UserModel.findByIdAndUpdate(session.user?.id, {
             firstName, lastName, currency
         });

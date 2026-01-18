@@ -25,7 +25,7 @@ export async function connectDB(){
         cached.conn=await cached.promise
     } catch (error) {
         cached.promise=null
-        process.exit();
+        throw error;
     }
 }
 // 1:47:26
