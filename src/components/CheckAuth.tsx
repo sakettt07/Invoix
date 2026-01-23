@@ -16,9 +16,10 @@ export async function ProtectedPage() {
 export async function UnprotectedPage() {
     const session = await auth();
     if (session) {
-        if(!session.user.firstName ||!session.user.lastName){
+        if (!session.user.firstName || !session.user.lastName) {
             redirect('/onboarding')
         }
+        console.log("logged in user---", session)
         redirect('/dashboard');
     }
     return <></>
