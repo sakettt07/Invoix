@@ -6,7 +6,7 @@ import { BookAIcon, LayoutDashboardIcon, SettingsIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-
+// this is my dashboard sidebar
 export default function DashboardSidebar({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
     return (
