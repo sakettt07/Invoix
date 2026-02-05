@@ -17,7 +17,7 @@ export default function OnboardingPage() {
     const { register, handleSubmit, setValue, formState: { errors } } = useForm<z.infer<typeof onboardingSchema>>({
         resolver: zodResolver(onboardingSchema),
         defaultValues: {
-            currency: "USD"
+            currency: "USD",
         }
     });
     const [loading, setLoading] = useState<boolean>(false);
@@ -83,6 +83,10 @@ export default function OnboardingPage() {
                             </Select>
                             <input type="hidden" {...register("currency")} />
                         </div>
+                        <div className="grid gap-2">
+                            <Label>Email</Label>
+                            <Input placeholder="Kumar" type="email" disabled={true} />
+                        </div>
                         <Button disabled={loading}>{loading ? "Please wait..." : "Finish onboarding"}</Button>
                     </form>
                 </CardContent>
@@ -90,3 +94,4 @@ export default function OnboardingPage() {
         </div>
     )
 }
+// 3:32

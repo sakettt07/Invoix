@@ -11,7 +11,7 @@ export default function DashboardSidebar({ children }: { children: React.ReactNo
     const pathname = usePathname();
     return (
         <Sidebar>
-            <SidebarHeader className="px-6 -mt-7">
+            <SidebarHeader className="px-6 mt-1">
                 <Logo />
             </SidebarHeader>
             <SidebarContent>
@@ -50,4 +50,3 @@ export default function DashboardSidebar({ children }: { children: React.ReactNo
         </Sidebar>
     )
 }
-// 2:36
