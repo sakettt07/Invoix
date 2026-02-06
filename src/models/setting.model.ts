@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { string } from "zod";
 
 interface ISignature {
     name: string;
@@ -14,5 +15,18 @@ interface ISettings {
 }
 
 const signatureSchema = new mongoose.Schema<ISignature>({
+    name: { type: String, default: null },
+    image: { type: String, default: null },
+}, {
+    _id: false
+});
 
+const settingsSchema = new mongoose.Schema<ISettings>({
+    invoiceLogo: { type: String, default: null },
+    signature: signatureSchema
+}, {
+    timestamps: true
 })
+
+const SettingModel = mongoose.models.setting || mongoose.model("setting", settingsSchema);
+export default SettingModel;
