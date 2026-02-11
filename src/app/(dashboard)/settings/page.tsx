@@ -3,6 +3,7 @@ export default function SettingsPage() {
         <div className="p-4">
             <div>
                 <h1 className="font-semibold text-xl">Settings</h1>
+                <p>User Setting items</p>
             </div>
         </div>
     )
